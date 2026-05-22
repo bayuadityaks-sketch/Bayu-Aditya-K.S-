@@ -1,0 +1,516 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bayu Aditya K.S | Website Pribadi</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#06142b;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(5,15,35,0.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:700;
+    }
+
+    .logo span{
+      color:#57a6ff;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#57a6ff;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:130px 8% 50px;
+      gap:50px;
+      flex-wrap:wrap;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:#57a6ff20;
+      border-radius:50%;
+      filter:blur(80px);
+      top:100px;
+      left:-100px;
+      z-index:-1;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:68px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      color:#57a6ff;
+    }
+
+    .hero-text p{
+      color:#d0dcef;
+      line-height:1.9;
+      font-size:18px;
+      margin-bottom:35px;
+      max-width:650px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 38px;
+      background:linear-gradient(135deg,#57a6ff,#2563eb);
+      border-radius:50px;
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:0 0 25px rgba(87,166,255,0.5);
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 35px rgba(87,166,255,0.8);
+    }
+
+    /* PROFILE CARD */
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      min-width:300px;
+    }
+
+    .profile-card{
+      width:340px;
+      height:420px;
+      border-radius:30px;
+      background:linear-gradient(180deg,#10254b,#081b37);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:35px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    .profile-card::before{
+      content:'';
+      position:absolute;
+      width:200px;
+      height:200px;
+      background:#57a6ff30;
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+      filter:blur(25px);
+    }
+
+    .circle{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#57a6ff,#2563eb);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:auto;
+      font-size:50px;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    .profile-card h2{
+      text-align:center;
+      margin-top:25px;
+      font-size:30px;
+    }
+
+    .profile-card p{
+      text-align:center;
+      margin-top:15px;
+      color:#d6e2f1;
+      line-height:1.8;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 8%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:50px;
+      margin-bottom:60px;
+    }
+
+    .title span{
+      color:#57a6ff;
+    }
+
+    /* SKILLS */
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .skill-box{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:30px;
+      transition:0.3s;
+      backdrop-filter:blur(8px);
+    }
+
+    .skill-box:hover{
+      transform:translateY(-10px);
+      background:rgba(87,166,255,0.08);
+    }
+
+    .skill-box h3{
+      color:#57a6ff;
+      margin-bottom:15px;
+      font-size:25px;
+    }
+
+    .skill-box p{
+      color:#d7e3f2;
+      line-height:1.8;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .about-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .about-text h2{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:#d6e2f1;
+      line-height:1.9;
+      margin-bottom:25px;
+    }
+
+    .about-card{
+      flex:1;
+      min-width:300px;
+      background:linear-gradient(180deg,#10254b,#081b37);
+      border-radius:25px;
+      padding:40px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .about-card ul{
+      list-style:none;
+    }
+
+    .about-card ul li{
+      margin:18px 0;
+      color:#d6e2f1;
+    }
+
+    .about-card ul li span{
+      color:#57a6ff;
+      font-weight:600;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#041122;
+      color:#9eb6d6;
+      border-top:1px solid rgba(255,255,255,0.06);
+      margin-top:60px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero-text h1{
+        font-size:50px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:18px;
+      }
+
+      .title{
+        font-size:38px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      Bayu <span>Aditya</span>
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Belajar</a></li>
+      <li><a href="#about">Tentang</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <h1>
+        Halo, Saya <br>
+        <span>Bayu Aditya K.S</span>
+      </h1>
+
+      <p>
+        Saya seorang peserta didik SMKS Sandikta kelas XI TKJ 3.
+        Saat ini saya sedang belajar membuat website pribadi,
+        networking, Linux, dan dunia teknologi untuk meningkatkan
+        skill di bidang IT.
+      </p>
+
+      <a href="#skills" class="btn">
+        Explore More
+      </a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <div class="profile-card">
+
+        <div class="circle">
+          B
+        </div>
+
+        <h2>XI TKJ 3</h2>
+
+        <p>
+          Siswa SMKS Sandikta yang sedang belajar
+          web development, networking, dan Linux server.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="title">
+      Yang Sedang <span>Saya Pelajari</span>
+    </h2>
+
+    <div class="skills">
+
+      <div class="skill-box">
+        <h3>🌐 Web Development</h3>
+
+        <p>
+          Belajar membuat website modern menggunakan
+          HTML, CSS, dan JavaScript dengan desain responsive.
+        </p>
+      </div>
+
+      <div class="skill-box">
+        <h3>🖥 Networking</h3>
+
+        <p>
+          Memahami dasar jaringan komputer,
+          konfigurasi router, topologi jaringan,
+          dan troubleshooting.
+        </p>
+      </div>
+
+      <div class="skill-box">
+        <h3>🐧 Linux Server</h3>
+
+        <p>
+          Belajar administrasi Linux server,
+          hosting website, dan keamanan sistem.
+        </p>
+      </div>
+
+      <div class="skill-box">
+        <h3>☁ Cloud & Hosting</h3>
+
+        <p>
+          Mengenal VPS, cloud hosting,
+          dan cara deploy website ke internet.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-text">
+
+        <h2>Tentang Saya</h2>
+
+        <p>
+          Saya memiliki minat besar di bidang teknologi,
+          terutama networking dan web development.
+          Saya terus belajar untuk meningkatkan kemampuan
+          dan menjadi seseorang yang profesional di dunia IT.
+        </p>
+
+        <a href="#" class="btn">
+          Hubungi Saya
+        </a>
+
+      </div>
+
+      <div class="about-card">
+
+        <ul>
+
+          <li>
+            <span>Nama :</span>
+            Bayu Aditya K.S
+          </li>
+
+          <li>
+            <span>Sekolah :</span>
+            SMKS Sandikta
+          </li>
+
+          <li>
+            <span>Kelas :</span>
+            XI TKJ 3
+          </li>
+
+          <li>
+            <span>Fokus :</span>
+            Networking & Web Development
+          </li>
+
+          <li>
+            <span>Status :</span>
+            Sedang Belajar
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Bayu Aditya K.S | Website Pribadi
+  </footer>
+
+</body>
+</html>
+```
